@@ -1,0 +1,59 @@
+extends layout
+
+block content
+    div(data-ng-controller="indexController as vm")
+        .panel
+            div(id="carousel" class="carousel slide" data-ride="carousel" data-pause="false")
+                div(class="carousel-inner" )
+                    div(class="carousel-item active" data-interval="10000")
+                        .content   
+                            img(class="logoCliente height-10" src="/images/logoCliente2.png", alt="")
+                            span(class="title") {{ vm.title }}
+                            img(class="float-right height-10" src="/images/logoSegsat.png", alt="")
+                            span(class="infoDate float-right") {{ vm.infoDate }}
+                        div(class="d-block w-100 height-90")
+                            table(class="table")
+                                thead
+                                    tr
+                                        th(class="text-left sub") Plataforma
+                                        th(class="text-center sub") Serviço
+                                        th(class="text-center sub") Veículo
+                                        th(class="text-center sub") Distância
+                                        th(class="text-right sub") Previsão
+                                tbody
+                                        tr(ng-repeat="travel in vm.travels | orderBy: '-distance' ")
+                                            td(class="text-left sub") {{vm.title}}
+                                            td(class="text-center sub") CIRCULAR                                                                                               
+                                            td(class="text-center sub") {{ travel.vehicle }}
+                                            td(class="text-center sub") {{ travel.distance}}                             
+                                            td(class="text-right sub")
+                                                span(ng-if="vm.notconnect === '' ") {{ travel.preview }}   
+                                                span(ng-if="vm.notconnect !== '' ") {{ vm.notconnect }}        
+                    div(class="carousel-item" data-interval="5000")
+                        img(class="d-block w-100" src="/images/2.png" alt="Second slide")
+                    div(class="carousel-item" data-interval="10000")
+                        .content   
+                            img(class="logoCliente height-10" src="/images/logoCliente2.png", alt="")
+                            span(class="title") {{ vm.title }}
+                            img(class="float-right height-10" src="/images/logoSegsat.png", alt="")
+                            span(class="infoDate float-right") {{vm.infoDate}}
+                        div(class="d-block w-100 height-90")
+                            table(class="table")
+                                thead
+                                    tr
+                                        th(class="text-left sub") Plataforma
+                                        th(class="text-center sub") Serviço
+                                        th(class="text-center sub") Veículo
+                                        th(class="text-center sub") Distância
+                                        th(class="text-right sub") Previsão
+                                tbody 
+                                        tr(ng-repeat="travel in vm.travels | orderBy: '-distance' ")
+                                            td(class="text-left sub") {{vm.title}}
+                                            td(class="text-center sub") CIRCULAR                                                                                                
+                                            td(class="text-center sub") {{ travel.vehicle }}
+                                            td(class="text-center sub") {{ travel.distance}}                            
+                                            td(class="text-right sub") 
+                                                span(ng-if="vm.notconnect === '' ") {{ travel.preview }}   
+                                                span(ng-if="vm.notconnect !== '' ") {{ vm.notconnect }}   
+                    div(class="carousel-item" data-interval="8000")
+                        img(class="d-block w-100" src="/images/1.png" alt="Third slide")      

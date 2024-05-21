@@ -1,0 +1,22 @@
+{
+  "name": "painel-gbus",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "angular": "^1.7.8",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "cookie-parser": "^1.4.4",
+    "debug": "^4.1.1",
+    "express": "~4.16.0",
+    "jquery": "^3.4.1",
+    "jsdom": "^15.1.1",
+    "morgan": "^1.9.1",
+    "popper.js": "^1.15.0",
+    "pug": "^2.0.3",
+    "static-favicon": "~1.0.0"
+  }
+}
